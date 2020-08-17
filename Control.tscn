@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.90002
+margin_top = -0.950012
+margin_right = 1.90002
+margin_bottom = -0.950012
+script = ExtResource( 1 )
+
+[node name="HTTPReqCount" type="HTTPRequest" parent="."]
+
+[node name="HTTPReqPort" type="HTTPRequest" parent="."]
+
+[node name="HTTPReqPort_Up" type="HTTPRequest" parent="."]
+[connection signal="request_completed" from="HTTPReqCount" to="." method="_on_HTTPReqCount_request_completed"]
+[connection signal="request_completed" from="HTTPReqPort" to="." method="_on_HTTPReqPort_request_completed"]
